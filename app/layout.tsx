@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "ChatSphere is a modern, secure, real-time messaging platform built for fast and private conversations.",
   themeColor: "#0f172a",
-  metadataBase: new URL("chatsphere.opslinksystems.xyz"),
+  metadataBase: new URL("https://chatsphere.opslinksystems.xyz"),
   openGraph: {
     title: "ChatSphere",
     description:
