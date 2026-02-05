@@ -4,22 +4,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: sensible defaults */
+/* ===== Global Theme ===== */
 html,
 body {
-  background-color: #121212;
-  color: #ffffff;
+  min-height: 100%;
+  color: #e5e7eb; /* Tailwind gray-200 */
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,0.15), transparent 40%),
+    radial-gradient(1000px 500px at 90% 10%, rgba(56,189,248,0.12), transparent 45%),
+    linear-gradient(180deg, #0b0f1a 0%, #0f172a 40%, #020617 100%);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-/* Optional custom resets (safe with Tailwind) */
+/* ===== Base Reset (safe with Tailwind) ===== */
 * {
   box-sizing: border-box;
 }
 
-a {
-  @apply text-inherit no-underline;
+/* Improve text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Links */
+a {
+  @apply text-inherit no-underline transition-colors;
+}
+
+a:hover {
+  @apply text-indigo-400;
+}
+
+/* Buttons */
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-transparent;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
 }
