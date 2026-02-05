@@ -1,26 +1,28 @@
 {
-  "name": "telegram-web-clone",
+  "name": "opschat",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "14.3.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^14.2.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "zustand": "^4.3.6",
     "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "eslint": "8.49.0",
-    "eslint-config-next": "14.3.2",
-    "typescript": "5.2.2"
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^14.2.14",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
