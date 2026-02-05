@@ -1,18 +1,26 @@
 import { create } from "zustand";
+import { Chat, Message } from "@/lib/types";
 
-export const useChatStore = create((set) => ({
+interface ChatState {
+  chats: Chat[];
+  activeChatId: string | null;
+  messages: Record<string, Message[]>;
+  setChats: (c: Chat[]) => void;
+  setActiveChat: (id: string) => void;
+  addMessage: (msg: Message) => void;
+}
+
+export const useChatStore = create<ChatState>((set) => ({
   chats: [],
   activeChatId: null,
   messages: {},
-
   setChats: (chats) => set({ chats }),
   setActiveChat: (id) => set({ activeChatId: id }),
-
-  addMessage: (chatId, message) =>
+  addMessage: (msg) =>
     set((state) => ({
       messages: {
         ...state.messages,
-        [chatId]: [...(state.messages[chatId] || []), message],
+        [msg.chatId]: [...(state.messages[msg.chatId] || []), msg],
       },
     })),
 }));
